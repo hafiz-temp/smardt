@@ -1,0 +1,222 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Verdana, sans-serif;
+}
+
+main {
+    height: 100vh;
+}
+
+.interface {
+    min-height: 100%;
+}
+
+/* Controls */
+.controls-wrapper {
+    background-color: white;
+    bottom: 0;
+    left: 0;
+}
+
+.controls-wrapper--active {
+    background-color: rgba(4, 70, 129, 1);
+    padding-bottom: 30px !important;
+}
+
+.controls__replying-to {
+    font-size: .9rem;
+}
+
+input.controls__title,
+input.controls__creator,
+input.controls__title,
+textarea.controls__message {
+    resize: none;
+    border: 2px solid rgba(4, 70, 129, .3);
+    border-radius: 3px;
+    outline: none;
+    transition: .5s border;
+}
+
+input.controls__creator:focus,
+input.controls__creator:active,
+input.controls__title:focus,
+input.controls__title:active,
+textarea.controls__message:focus,
+textarea.controls__message:active {
+    outline: none;
+    border: 2px solid rgba(76, 175, 80, 1);
+}
+
+input.controls__title {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+@media (min-width: 768px) {
+    input.controls__title {
+        flex: 0 0 calc(66.666667% - 10px);
+        max-width: calc(66.666667% - 10px);
+        margin-left: 10px;
+    }
+}
+
+.btn.controls__send {
+    color: white;
+    background: rgba(76, 175, 80, 1);
+    border: 2px solid rgba(76, 175, 80, .3);
+    transition: .2s;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (min-width: 767px) {
+    .btn.controls__send {
+        flex: 0 0 calc(16.666667% - 10px);
+        max-width: calc(16.666667% - 10px);
+    }
+
+}
+
+.btn.controls__send:disabled {
+    color: white;
+}
+
+.btn.controls__send:not(:disabled) {
+    color: white;
+    background: rgba(76, 175, 80, 1);
+    border: 2px solid rgba(76, 175, 80, 1);
+}
+
+.btn.controls__send:hover:not(:disabled) {
+    color: rgba(76, 175, 80, 1);
+    background: white
+}
+
+.btn.controls__send:active,
+.btn.controls__send:focus {
+    outline: none;
+}
+
+
+/* Comments */
+.comments-wrapper {
+    height: 100%;
+    padding-bottom: 140px;
+}
+
+@media (min-width: 767px) {
+    .comments-wrapper {
+        padding-bottom: 100px;
+    }
+}
+
+.comment__content__creator {
+    font-size: 1.2rem;
+}
+
+.comment__content__title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.comment__content__message {
+    font-size: .9rem;
+}
+
+.comment__content__buttons {
+    font-size: .8rem;
+}
+
+.comment__content__buttons__button {
+    border-radius: 3px;
+    padding: 3px;
+    color: white
+}
+
+.comment__content__buttons__reply {
+    border: 1px solid rgba(4, 70, 129, 1);
+    background-color: rgba(4, 70, 129, 1);
+}
+
+.comment__content__buttons__reply:hover {
+    color: rgba(4, 70, 129, 1);
+    background-color: white;
+}
+
+.comment__content__buttons__edit {
+    border: 1px solid #6c757d;
+    background-color: #6c757d;
+}
+
+.comment__content__buttons__edit:hover {
+    color: #6c757d;
+    background-color: white;
+}
+
+.comment__content__buttons__delete {
+    border: 1px solid #dc3545;
+    background-color: #dc3545;
+}
+
+.comment__content__buttons__delete:hover {
+    color: #dc3545;
+    background-color: white;
+}
+
+
+.comment {
+    border-left: 2px solid rgba(4, 70, 139, 1);
+    transition: border .2s, background-color .2s;
+}
+
+.comment__content {
+    background-color: white;
+    transition: border .2s, background-color 6s;
+}
+
+.comment:hover {
+    cursor: pointer;
+}
+
+.comment.comment--parent:hover {
+    border-left: 6px solid rgba(4, 70, 129, 1);
+}
+
+.comment.comment--parent.comment--parent--active {
+    border-left: 6px solid rgba(4, 70, 129, 1);
+}
+
+.comment.comment--parent.comment--parent--active .comment__content {
+    background-color: rgba(4, 70, 129, .2);
+}
+
+.comment__content {
+    transition: border .5s;
+}
+
+.comment.comment--child {
+    border: none;
+}
+
+@media (min-width: 767px) {
+    .comment.comment--child {
+        border-left: 2px solid rgba(4, 70, 139, 1);
+    }
+}
+
+.comment--child .comment__content {
+    border-left: 2px solid rgba(76, 175, 80, 1);
+}
+
+.comment--child:hover .comment__content {
+    border-left: 6px solid rgba(76, 175, 80, 1);
+}
+
+.comment.comment--child.comment--child--active .comment__content {
+    border-left: 6px solid rgba(76, 175, 80, 1);
+    background-color: rgba(76, 175, 80, .2);
+}
